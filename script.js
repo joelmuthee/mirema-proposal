@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.2,
-        rootMargin: "-100px 0px -50% 0px"
+        threshold: 0.01,
+        rootMargin: "-25% 0px -50% 0px"
     });
 
     sections.forEach(section => scrollSpyObserver.observe(section));
