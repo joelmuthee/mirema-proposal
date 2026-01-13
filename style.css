@@ -688,6 +688,22 @@ h4 {
         justify-content: center;
     }
 
+    /* Footer Spacing Fixes */
+    .footer-content {
+        gap: 20px;
+        /* Reduce generic gap */
+    }
+
+    .footer-brand p {
+        margin-bottom: 5px;
+        /* Reduce space under 'Prepared by' */
+    }
+
+    .agency-logo {
+        margin-bottom: 5px;
+        /* Reduce space around logo */
+    }
+
     /* Cards */
     .card,
     .feature-card,
