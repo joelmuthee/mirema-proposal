@@ -98,11 +98,13 @@ h4 {
 
 .gold-text {
     color: var(--color-primary);
-    background: linear-gradient(135deg, #fff 0%, var(--color-primary) 40%, #b8860b 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #b8860b 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
+    display: inline;
+    /* Use inline to avoid block wrapping issues */
+    font-weight: 700;
 }
 
 /* Header */
@@ -517,9 +519,15 @@ h4 {
 }
 
 .agency-logo {
-    height: 40px;
+    /* Logo styling update */
+    height: auto;
+    width: 200px;
+    /* Increased width for visibility */
+    max-width: 100%;
     margin: 0 auto;
     transition: 0.3s;
+    opacity: 1;
+    filter: none;
 }
 
 .agency-logo:hover {
