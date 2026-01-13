@@ -50,7 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (activeLink) activeLink.classList.add('active');
             }
         });
-    }, { threshold: 0.5 });
+    }, {
+        threshold: 0.2,
+        rootMargin: "-100px 0px -50% 0px"
+    });
 
     sections.forEach(section => scrollSpyObserver.observe(section));
 
