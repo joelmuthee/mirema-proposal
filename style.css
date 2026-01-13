@@ -488,9 +488,11 @@ h4 {
 }
 
 .pricing-features li::before {
-    content: '✓';
+    content: '\2713';
     color: var(--color-primary);
     font-weight: bold;
+    font-family: sans-serif;
+    /* Setup safe font for unicode */
 }
 
 /* Footer Updates */
