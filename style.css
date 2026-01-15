@@ -504,7 +504,7 @@ h4 {
 
 /* Footer Updates */
 .footer {
-    padding: 40px 0 30px;
+    padding: 20px 0 20px;
     background: #000;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -514,12 +514,12 @@ h4 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 25px;
+    gap: 10px;
 }
 
 .footer-brand p {
     color: var(--color-text-muted);
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-size: 0.9rem;
 }
 
@@ -544,7 +544,7 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 15px;
 }
 
 .contact-link {
@@ -571,8 +571,8 @@ h4 {
 }
 
 .footer-copyright {
-    margin-top: 30px;
-    padding-top: 20px;
+    margin-top: 10px;
+    padding-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     width: 100%;
 }
