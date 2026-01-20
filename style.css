@@ -623,7 +623,7 @@ h4 {
 .fade-in-section {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
     will-change: opacity, transform;
 }
 
