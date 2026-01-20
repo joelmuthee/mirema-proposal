@@ -70,4 +70,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Mobile Scroll Hover Simulation
+    // Check if device supports hover (if it doesn't, it's likely a touch device)
+    if (window.matchMedia('(hover: none)').matches) {
+        const mobileHoverObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('mobile-hover');
+                } else {
+                    entry.target.classList.remove('mobile-hover');
+                }
+            });
+        }, {
+            threshold: 0.2, // Trigger when 20% visible
+            rootMargin: "-10% 0px -10% 0px" // Trigger slightly inwards from top/bottom
+        });
+
+        const interactives = document.querySelectorAll('.card, .feature-card, .pricing-card, .pain-points li, .vision-points li, .btn-primary, .contact-link');
+        interactives.forEach(el => mobileHoverObserver.observe(el));
+    }
 });
