@@ -803,8 +803,8 @@ h4 {
     }
 
     .feature-card {
-        align-items: flex-end;
-        text-align: right;
+        align-items: center;
+        text-align: center;
     }
 }
 
