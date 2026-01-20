@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Mobile Scroll Hover Simulation
-    // Check if device supports hover (if it doesn't, it's likely a touch device)
-    if (window.matchMedia('(hover: none)').matches) {
+    // Check if device supports hover OR if it's a mobile screen size
+    if (window.matchMedia('(hover: none)').matches || window.innerWidth <= 768) {
         const mobileHoverObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, {
-            threshold: 0.2, // Trigger when 20% visible
-            rootMargin: "-10% 0px -10% 0px" // Trigger slightly inwards from top/bottom
+            threshold: 0.1, // Trigger earlier (10% visible)
+            rootMargin: "0px" // Remove negative margin to trigger sooner
         });
 
         const interactives = document.querySelectorAll('.card, .feature-card, .pricing-card, .pain-points li, .vision-points li, .btn-primary, .contact-link');
