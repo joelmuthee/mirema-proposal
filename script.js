@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, {
             threshold: 0.1, // Trigger earlier (10% visible)
-            rootMargin: "0px" // Remove negative margin to trigger sooner
+            rootMargin: "-40% 0px -40% 0px" // Only trigger when element is in the middle 20% of screen
         });
 
         const interactives = document.querySelectorAll('.card, .feature-card, .pricing-card, .pain-points li, .vision-points li, .btn-primary, .contact-link');
