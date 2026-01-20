@@ -466,16 +466,16 @@ h4 {
 
 /* Investment Section */
 .pricing-wrapper {
-    display: flex;
-    flex-direction: column;
-    /* Mobile first */
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 30px;
     margin-top: 50px;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
     .pricing-wrapper {
-        flex-direction: row;
+        grid-template-columns: 1fr 1fr;
         align-items: stretch;
     }
 }
