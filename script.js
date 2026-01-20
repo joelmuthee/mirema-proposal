@@ -71,23 +71,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile Scroll Hover Simulation
-    // Check if device supports hover OR if it's a mobile screen size
-    if (window.matchMedia('(hover: none)').matches || window.innerWidth <= 768) {
-        const mobileHoverObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('mobile-hover');
-                } else {
-                    entry.target.classList.remove('mobile-hover');
-                }
-            });
-        }, {
-            threshold: 0.1, // Trigger earlier (10% visible)
-            rootMargin: "-40% 0px -40% 0px" // Only trigger when element is in the middle 20% of screen
-        });
-
+    // Mobile Scroll Hover Simulation - Winner Takes All Logic
+    // Only run on mobile screen sizes
+    if (window.innerWidth <= 768) {
         const interactives = document.querySelectorAll('.card, .feature-card, .pricing-card, .pain-points li, .vision-points li, .btn-primary, .contact-link');
-        interactives.forEach(el => mobileHoverObserver.observe(el));
+
+        const activeItemCheck = () => {
+            const viewportCenter = window.innerHeight / 2;
+            let closestElement = null;
+            let minDistance = Infinity;
+
+            interactives.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                // calculating element center
+                const elementCenter = rect.top + (rect.height / 2);
+                const distance = Math.abs(viewportCenter - elementCenter);
+
+                // Only consider elements that are overlapping the viewport
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestElement = el;
+                    }
+                }
+
+                // Clear all first (safe reset)
+                el.classList.remove('mobile-hover');
+            });
+
+            // Activate closest if it exists
+            if (closestElement) {
+                closestElement.classList.add('mobile-hover');
+            }
+        };
+
+        // Run on scroll
+        document.addEventListener('scroll', () => {
+            requestAnimationFrame(activeItemCheck);
+        }, { passive: true });
+
+        // Run initially
+        activeItemCheck();
     }
 });
