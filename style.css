@@ -812,6 +812,8 @@ h4 {
 .feature-card:hover {
     background: #fff;
     border-color: var(--color-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(208, 139, 10, 0.2);
 }
 
 .pricing-card.minor {
