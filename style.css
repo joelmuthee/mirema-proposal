@@ -934,3 +934,291 @@ h4 {
 .cursor-glow {
     background: radial-gradient(circle, rgba(208, 139, 10, 0.15) 0%, transparent 70%);
 }
+
+/* Case Study Section */
+.case-study {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .case-study-grid {
+        grid-template-columns: 350px 1fr;
+        gap: 80px;
+    }
+}
+
+/* Sidebar / Logo Area */
+.case-study-sidebar {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.school-logo-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.school-logo-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+}
+
+.school-logo-text {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #800000;
+}
+
+.shield-icon {
+    font-size: 2.5rem;
+}
+
+.logo-main {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.logo-sub {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 5px;
+}
+
+.visit-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.visit-link:hover {
+    color: var(--color-text);
+    letter-spacing: 2px;
+}
+
+/* Content Area */
+.section-title-left {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--color-text);
+}
+
+.client-name {
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.stat-box {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 20px 15px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-card);
+}
+
+.stat-box:hover {
+    background: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(208, 139, 10, 0.15);
+    border-color: rgba(208, 139, 10, 0.3);
+}
+
+.stat-count {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    /* Uniform Brand Gold Gradient */
+    background: linear-gradient(135deg, var(--color-primary), #b8860b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* All stats use the same theme color now */
+.stat-box:nth-child(2) .stat-count,
+.stat-box:nth-child(3) .stat-count,
+.stat-box:nth-child(4) .stat-count {
+    background: linear-gradient(135deg, var(--color-primary), #b8860b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.2;
+    display: block;
+}
+
+/* Text Content */
+.case-study-text p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.case-study-text strong {
+    color: var(--color-primary);
+    /* Highlight keywords with brand color */
+    font-weight: 700;
+}
+
+.text-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(208, 139, 10, 0.3);
+    transition: all 0.3s ease;
+}
+
+.text-link:hover {
+    color: var(--color-text);
+    text-decoration-color: var(--color-primary);
+}
+
+.highlight-text-block {
+    border-left: 3px solid var(--color-primary);
+    padding-left: 20px;
+    margin-left: -20px;
+    /* Pull out slightly */
+    background: linear-gradient(to right, rgba(208, 139, 10, 0.05), transparent);
+    /* Subtle gold tint backing */
+    border-radius: 0 8px 8px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Bottom Features Grid */
+.case-features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 60px;
+}
+
+@media (min-width: 768px) {
+    .case-features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.case-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+}
+
+.case-feature:hover {
+    transform: translateY(-5px);
+    border-color: rgba(208, 139, 10, 0.3);
+}
+
+.mini-icon {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.case-feature h4 {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.case-feature p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.client-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.toggle-link {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.toggle-link:hover {
+    color: var(--color-text);
+    letter-spacing: 2px;
+}

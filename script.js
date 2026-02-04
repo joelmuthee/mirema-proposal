@@ -113,4 +113,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Run initially
         activeItemCheck();
     }
+
+    // Case Study Read More Toggle
+    const readMoreTrigger = document.getElementById('read-more-trigger');
+    const caseStudyExtra = document.getElementById('case-study-extra');
+
+    if (readMoreTrigger && caseStudyExtra) {
+        readMoreTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (caseStudyExtra.style.display === 'none') {
+                caseStudyExtra.style.display = 'block';
+                readMoreTrigger.textContent = 'Read Less';
+            } else {
+                caseStudyExtra.style.display = 'none';
+                readMoreTrigger.textContent = 'Read More';
+            }
+        });
+    }
 });
