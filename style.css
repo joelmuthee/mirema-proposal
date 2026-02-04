@@ -959,10 +959,15 @@ h4 {
     }
 }
 
+@media (min-width: 1024px) {
+    .case-study-sidebar {
+        position: sticky;
+        top: 120px;
+    }
+}
+
 /* Sidebar / Logo Area */
 .case-study-sidebar {
-    position: sticky;
-    top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
